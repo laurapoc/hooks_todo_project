@@ -11,7 +11,14 @@ export default function TodoList(props) {
       <List>
         {props.todos.map((todo) => (
           <Fragment>
-            <Todo task={todo.task} key={todo.id} completed={todo.completed} />
+            <Todo
+              id={todo.id}
+              task={todo.task}
+              key={todo.id}
+              completed={todo.completed}
+              removeTodo={props.removeTodo}
+              toggleTodo={props.toggleTodo}
+            />
 
             <Divider />
           </Fragment>
