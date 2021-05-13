@@ -9,7 +9,7 @@ export default function TodoList(props) {
   return (
     <Paper>
       <List>
-        {props.todos.map((todo) => (
+        {props.todos.map((todo, i) => (
           <Fragment>
             <Todo
               id={todo.id}
@@ -20,8 +20,7 @@ export default function TodoList(props) {
               toggleTodo={props.toggleTodo}
               editTodo={props.editTodo}
             />
-
-            <Divider />
+            {i < props.todos.length - 1 && <Divider />}
           </Fragment>
         ))}
       </List>
