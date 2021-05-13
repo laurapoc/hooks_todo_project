@@ -18,7 +18,8 @@ function TodoForm({ addTodo }) {
           onChange={handleChange}
           margin="normal"
           label="Add New Todo"
-          fullWidth
+          // fullWidth
+          style={{marginLeft: "3%", width: "95%"}}
         />
       </form>
     </Paper>
