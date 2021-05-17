@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import useTodoState from "./hooks/useTodoState";
 import TodoList from "./TodoList";
 import Typography from "@material-ui/core/Typography";
@@ -9,12 +9,9 @@ import Grid from "@material-ui/core/Grid";
 import TodoForm from "./TodoForm";
 
 export default function TodoApp() {
-  const initialTodos = JSON.parse(window.localStorage.getItem("todos") || "[]");
-  const {todos, addTodo, removeTodo, toggleTodo, editTodo} = useTodoState(initialTodos);
-
-  useEffect(() => {
-    window.localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
+  const initialTodos = [{ id: 1, task: "pet a monkey", completed: false }];
+  const { todos, addTodo, removeTodo, toggleTodo, editTodo } =
+    useTodoState(initialTodos);
 
   return (
     <Paper
@@ -34,10 +31,14 @@ export default function TodoApp() {
       <Grid container justify="center" style={{ marginTop: "1rem" }}>
         <Grid item xs={11} md={8} lg={4}>
           <TodoForm addTodo={addTodo} />
-          <TodoList todos={todos} removeTodo={removeTodo} toggleTodo={toggleTodo} editTodo={editTodo} />
+          <TodoList
+            todos={todos}
+            removeTodo={removeTodo}
+            toggleTodo={toggleTodo}
+            editTodo={editTodo}
+          />
         </Grid>
       </Grid>
     </Paper>
   );
 }
-
