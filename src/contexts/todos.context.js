@@ -1,5 +1,4 @@
-//todos
-//all methods to interact with todos
+
 import React, { createContext } from "react";
 import useTodoState from "../hooks/useTodoState";
 
