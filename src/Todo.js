@@ -10,10 +10,10 @@ import {
   ListItemSecondaryAction,
 } from "@material-ui/core";
 import EditTodoForm from "./EditTodoForm";
-import { TodosContext } from "./contexts/todos.context";
+import { DispatchContext } from "./contexts/todos.context";
 
 export default function Todo({ task, completed, id }) {
-  const {dispatch} = useContext(TodosContext)
+  const dispatch = useContext(DispatchContext)
   const [isEditing, toggle] = useToggleState(false);
   return (
     <ListItem style={{ height: "64px" }}>
