@@ -6,6 +6,7 @@ import { TodosContext } from "./contexts/todos.context";
 export default function EditTodoForm(props) {
   const { editTodo } = useContext(TodosContext);
   const [value, handleChange, reset] = useInputState(props.task);
+  console.log("EDIT TODO FORM RENDER");
   return (
     <form
       onSubmit={(e) => {

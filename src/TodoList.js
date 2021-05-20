@@ -13,7 +13,7 @@ export default function TodoList() {
       <Paper>
         <List>
           {todos.map((todo, i) => (
-            <Fragment>
+            <Fragment key={todo.id} >
               <Todo {...todo} key={todo.id} />
               {i < todos.length - 1 && <Divider />}
             </Fragment>
