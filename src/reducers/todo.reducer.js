@@ -1,4 +1,3 @@
-import { CallToActionSharp } from "@material-ui/icons";
 import { v4 as uuidv4 } from "uuid";
 
 const reducer = (state, action) => {
